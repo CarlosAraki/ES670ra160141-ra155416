@@ -1,0 +1,38 @@
+======================================================
+ES670 - Laboratório (semana 02)
+Prof. Denis Loubach
+======================================================
+
+"Roteiro rápido"
+
+Criar um projeto no KDS
+- Projeto baseado em KSDK 1.2
+- Utilizar o kit target para referência do projeto
+
+Incluir a biblioteca compilada do SDK no projeto (ksdk_platform_lib_KL25Z4)
+- Utilizar o FAQ elaborado pelo PAD/PED para auxílio
+
+Adicionar os 'paths' da lib do projeto
+- <path_ksdk>/platform/drivers/inc
+- <path_ksdk>/platform/utilities/inc
+- <path_ksdk>/platform/hal/inc
+- <path_ksdk>/platform/system/inc
+- <path_ksdk>/platform/system/inc
+Utilizar o FAQ elaborado pelo PAD para auxílio
+
+Adicionar os arquivos .c e .h fornecidos
+
+Criar o ponto de entrada do software embarcado (main)
+
+Utilizar o exemplo do executivo cíclico cooperativo como laço principal do software
+
+Inicializar o periférico de clock
+mcg_clockInit();
+
+Inicializar o periférico do buzzer
+buzzer_init();
+
+Utilizar as funções:
+buzzer_setBuzz() e buzzer_clearBuzz() para gerar uma onda quadrada no buzzer
+
+Utilizar as funções de temporização por laço de software (ex.: util_genDelay10ms) disponíveis no util.h

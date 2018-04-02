@@ -30,9 +30,9 @@
 
 /* ************************************************ */
 /*File name:        main.c                            */
-/*File description: gera onda com período de 100ms  */
+/*File description: gera onda com perÃ­odo de 100ms  */
 /*                     Duty Cycle de 10%                */
-/* Author name:      Carlos Vinícius Araki Oliveira  */
+/* Author name:      Carlos VinÃ­cius Araki Oliveira  */
 /*                     RA:160141                        */
 /*                     Gabriel Bonani Machado            */
 /*                     RA:15416                        */
@@ -40,7 +40,6 @@
 /* ************************************************ */
 
 #include "fsl_device_registers.h"
-#include "buzzer_hal.h"
 #include "mcg_hal.h"
 #include "util.h"
 #include "ledswi_hal.h"
@@ -101,13 +100,21 @@ int main(void)
     /*in this for we will write in 7 seg HELLO, calling the functions in write order*/
     for(;;){
         setSegH();
+        util_genDelay250us();
         clearSeg();
+
         setSegE();
+        util_genDelay250us();
         clearSeg();
+
         setSegL();
+        util_genDelay250us();
         clearSeg();
+
         setSegO();
-        
+        util_genDelay250us();
+        clearSeg();
+
     }
     return 0;
     

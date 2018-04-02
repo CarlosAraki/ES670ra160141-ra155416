@@ -75,53 +75,53 @@
 
 #define SEGA_PIN                   0U /*The value here come from the pin of the pinout table*/
 #define SEGA_ALT                   0x01u
-#define SEGA_DIR_OUTPUT            (GPIO_OUTPUT << SegA_PIN)
+#define SEGA_DIR_OUTPUT            (GPIO_OUTPUT << SEGA_PIN)
 
 #define SEGB_PIN                   1U
-#define SEGB_ALT                   SegA_ALT
-#define SEGB_DIR_OUTPUT            (GPIO_OUTPUT << SegB_PIN)
+#define SEGB_ALT                   SEGA_ALT
+#define SEGB_DIR_OUTPUT            (GPIO_OUTPUT << SEGB_PIN)
 
 #define SEGC_PIN                   2U
-#define SEGC_ALT                   SegA_ALT
-#define SEGC_DIR_OUTPUT            (GPIO_OUTPUT << SegC_PIN)
+#define SEGC_ALT                   SEGA_ALT
+#define SEGC_DIR_OUTPUT            (GPIO_OUTPUT << SEGC_PIN)
 
 #define SEGD_PIN                   3U
-#define SEGD_ALT                   SegA_ALT
-#define SEGD_DIR_OUTPUT            (GPIO_OUTPUT << SegD_PIN)
+#define SEGD_ALT                   SEGA_ALT
+#define SEGD_DIR_OUTPUT            (GPIO_OUTPUT << SEGD_PIN)
 
 #define SEGE_PIN                   4U
-#define SEGE_ALT                   SegA_ALT
-#define SEGE_DIR_OUTPUT            (GPIO_OUTPUT << SegE_PIN)
+#define SEGE_ALT                   SEGA_ALT
+#define SEGE_DIR_OUTPUT            (GPIO_OUTPUT << SEGE_PIN)
 
 #define SEGF_PIN                   5U
-#define SEGF_ALT                   SegA_ALT
-#define SEGF_DIR_OUTPUT            (GPIO_OUTPUT << SegF_PIN)
+#define SEGF_ALT                   SEGA_ALT
+#define SEGF_DIR_OUTPUT            (GPIO_OUTPUT << SEGF_PIN)
 
 #define SEGG_PIN                   6U
 #define SEGG_ALT                   0x01u
-#define SEGG_DIR_OUTPUT            (GPIO_OUTPUT << SegG_PIN)
+#define SEGG_DIR_OUTPUT            (GPIO_OUTPUT << SEGG_PIN)
 
 #define SEGH_PIN                   7U
-#define SEGH_ALT                   SegA_ALT
-#define SEGH_DIR_OUTPUT            (GPIO_OUTPUT << SegH_PIN)
+#define SEGH_ALT                   SEGA_ALT
+#define SEGH_DIR_OUTPUT            (GPIO_OUTPUT << SEGH_PIN)
 
 /*This part defines the 7Seg display*/
 
 #define SEG1_PIN                   10U
-#define SEG1_ALT                   SegA_ALT
-#define Seg1_DIR_OUTPUT            (GPIO_OUTPUT << Seg1_PIN)
+#define SEG1_ALT                   SEGA_ALT
+#define SEG1_DIR_OUTPUT            (GPIO_OUTPUT << SEG1_PIN)
 
 #define SEG2_PIN                   11U
-#define SEG2_ALT                   SegA_ALT
-#define SEG2_DIR_OUTPUT            (GPIO_OUTPUT << Seg2_PIN)
+#define SEG2_ALT                   SEGA_ALT
+#define SEG2_DIR_OUTPUT            (GPIO_OUTPUT << SEG2_PIN)
 
 #define SEG3_PIN                   12U
-#define SEG3_ALT                   SegA_ALT
-#define SEG3_DIR_OUTPUT            (GPIO_OUTPUT << Seg3_PIN)
+#define SEG3_ALT                   SEGA_ALT
+#define SEG3_DIR_OUTPUT            (GPIO_OUTPUT << SEG3_PIN)
 
 #define SEG4_PIN                   13U
-#define SEG4_ALT                   SegA_ALT
-#define SEG4_DIR_OUTPUT            (GPIO_OUTPUT << Seg4_PIN)
+#define SEG4_ALT                   SEGA_ALT
+#define SEG4_DIR_OUTPUT            (GPIO_OUTPUT << SEG4_PIN)
 
 
 

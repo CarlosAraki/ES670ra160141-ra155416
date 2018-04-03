@@ -11,9 +11,6 @@
 #include "sevenSegments_hal.h"
 #include "es670_peripheral_board.h"
 
-
-
-
 /* ************************************************ */
 /* Method name:        segInit7Seg                  */
 /* Method description: Initialize the segments and  */
@@ -157,8 +154,8 @@ void  sevenSegments_clearSeg(void)
 
 
 /* ************************************************ */
-/* Method name:        setSeg                     	*/
-/* Method description: this function write char c 	*/
+/* Method name:        setSeg                       */
+/* Method description: this function write char c   */
 /* in Display                                       */
 /* Input params:       char C                       */
 /* Output params:      n/a                          */

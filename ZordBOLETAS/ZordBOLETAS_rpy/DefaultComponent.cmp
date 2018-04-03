@@ -1,0 +1,162 @@
+I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
+{ IComponent 
+	- _id = GUID 167e2806-cd6a-45a1-87d1-31aa2b51ecf1;
+	- _myState = 139264;
+	- _name = "DefaultComponent";
+	- _objectCreation = "2229793342018115042422";
+	- _umlDependencyID = "3140";
+	- m_buildType = Executable;
+	- m_libraries = "";
+	- m_additionalSources = "";
+	- m_standardHeaders = "";
+	- m_includePath = "";
+	- m_initializationCode = "";
+	- m_folder = { IFolder 
+		- _id = GUID bb0afd89-8f00-4871-b394-495f84a6e56c;
+		- _myState = 73728;
+		- _name = "Files";
+		- _objectCreation = "2229813342018115040422";
+		- _umlDependencyID = "1974";
+		- m_path = "";
+		- Elements = { IRPYRawContainer 
+			- size = 0;
+		}
+		- Files = { IRPYRawContainer 
+			- size = 0;
+		}
+	}
+	- m_configActive = { ICodeGenConfigInfoHandle 
+		- _m2Class = "ICodeGenConfigInfo";
+		- _id = GUID 6f6ad32b-8cea-423f-9f26-27ef7db544ff;
+	}
+	- Configs = { IRPYRawContainer 
+		- size = 1;
+		- value = 
+		{ ICodeGenConfigInfo 
+			- _id = GUID 6f6ad32b-8cea-423f-9f26-27ef7db544ff;
+			- _myState = 8192;
+			- _name = "DefaultConfig";
+			- _objectCreation = "2229833342018115038422";
+			- _umlDependencyID = "2791";
+			- HyperLinks = { IRPYRawContainer 
+				- size = 2;
+				- value = 
+				{ IMHyperLink 
+					- _id = GUID b24405ce-2f77-4572-8354-a0588fa03abb;
+					- _objectCreation = "2229853342018115036422";
+					- _umlDependencyID = "1484";
+					- _dependsOn = { INObjectHandle 
+						- _m2Class = "";
+					}
+					- _linkDispName = "Edit Makefile";
+					- _linkType = "FREE";
+					- _linkTarget = "C:\\Users\\aluno\\Pictures\\ZordBOLETAS\\DefaultComponent\\DefaultConfig\\DefaultComponent.mak";
+					- isConfigurationFileHyperLink = 1;
+				}
+				{ IMHyperLink 
+					- _id = GUID 6d4c1ae4-f820-4d73-8643-20353e3502ba;
+					- _objectCreation = "2229873342018115034422";
+					- _umlDependencyID = "1484";
+					- _dependsOn = { INObjectHandle 
+						- _m2Class = "";
+					}
+					- _linkDispName = "Edit Main File";
+					- _linkType = "FREE";
+					- _linkTarget = "C:\\Users\\aluno\\Pictures\\ZordBOLETAS\\DefaultComponent\\DefaultConfig\\MainDefaultComponent";
+					- isConfigurationFileHyperLink = 1;
+				}
+			}
+			- _scopeType = Explicit;
+			- _libraries = "";
+			- _additionalSources = "";
+			- _standardHeaders = "";
+			- _includePath = "";
+			- _targetMain = "";
+			- _instrumentation = None;
+			- _timeModel = RealTime;
+			- m_generateActors = 1;
+			- _statechartImplementation = Flat;
+			- _initializationCode = "";
+			- _checksList = 0 ;
+			- ScopeElements = { IRPYRawContainer 
+				- size = 0;
+			}
+			- InitialInstances = { IRPYRawContainer 
+				- size = 0;
+			}
+			- _root = { IFolder 
+				- _id = GUID 14cb6cbc-ba65-4266-b96c-bd8905c3caf9;
+				- _myState = 8192;
+				- _name = "DefaultConfig";
+				- _objectCreation = "2229893342018115032422";
+				- _umlDependencyID = "2791";
+				- m_path = "";
+				- Elements = { IRPYRawContainer 
+					- size = 0;
+				}
+				- Files = { IRPYRawContainer 
+					- size = 0;
+				}
+			}
+			- weakCGTime = 12.31.1969::22:0:0;
+			- strongCGTime = 12.31.1969::22:0:0;
+			- AnimScopeElements = { IRPYRawContainer 
+				- size = 0;
+			}
+			- m_allInAnimScope = 1;
+		}
+	}
+	- HandlesInMe = { IRPYRawContainer 
+		- size = 5;
+		- value = 
+		{ IHandle 
+			- _m2Class = "ISubsystem";
+			- _filename = "Default.sbs";
+			- _subsystem = "";
+			- _class = "";
+			- _name = "Default";
+			- _id = GUID ffcec505-eb2f-42d7-9c17-dd2e1a96e066;
+		}
+		{ IHandle 
+			- _m2Class = "ISubsystem";
+			- _filename = "Subsystem.sbs";
+			- _subsystem = "";
+			- _class = "";
+			- _name = "Subsystem";
+			- _id = GUID 8b01e2fd-2819-4f49-97e1-08473df588e1;
+		}
+		{ IHandle 
+			- _m2Class = "ISubsystem";
+			- _filename = "Requirements.sbs";
+			- _subsystem = "";
+			- _class = "";
+			- _name = "Requirements";
+			- _id = GUID 31c395b3-606e-4196-8ae5-72f16e7c9916;
+		}
+		{ IHandle 
+			- _m2Class = "ISubsystem";
+			- _filename = "ArchitecturePkg.sbs";
+			- _subsystem = "";
+			- _class = "";
+			- _name = "ArchitecturePkg";
+			- _id = GUID 3ab4dbc5-b643-425a-aad1-67fb07e24ce3;
+		}
+		{ IHandle 
+			- _m2Class = "ISubsystem";
+			- _filename = "AnalysisPkg.sbs";
+			- _subsystem = "";
+			- _class = "";
+			- _name = "AnalysisPkg";
+			- _id = GUID 9cbca869-eb73-400e-89bf-17f4bcea0bd5;
+		}
+	}
+	- VariationPoints = { IRPYRawContainer 
+		- size = 0;
+	}
+	- SelectedVariants = { IRPYRawContainer 
+		- size = 0;
+	}
+	- weakCGTime = 4.3.2018::13:54:5;
+	- strongCGTime = 12.31.1969::22:0:0;
+}
+

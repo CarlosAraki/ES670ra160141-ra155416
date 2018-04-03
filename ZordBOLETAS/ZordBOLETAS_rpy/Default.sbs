@@ -1,0 +1,74 @@
+I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
+{ ISubsystem 
+	- _id = GUID ffcec505-eb2f-42d7-9c17-dd2e1a96e066;
+	- _myState = 8192;
+	- _name = "Default";
+	- _objectCreation = "2228933342018115128422";
+	- _umlDependencyID = "2193";
+	- weakCGTime = 4.3.2018::13:55:28;
+	- strongCGTime = 4.3.2018::13:55:28;
+	- _defaultComposite = GUID b95ffffd-9415-4a65-ad1f-5aeeb9115d13;
+	- _eventsBaseID = -1;
+	- Classes = { IRPYRawContainer 
+		- size = 1;
+		- value = 
+		{ IClass 
+			- _id = GUID b95ffffd-9415-4a65-ad1f-5aeeb9115d13;
+			- _myState = 40960;
+			- _name = "TopLevel";
+			- _objectCreation = "2228953342018115126422";
+			- _umlDependencyID = "2295";
+			- weakCGTime = 4.3.2018::13:55:28;
+			- strongCGTime = 12.31.1969::22:0:0;
+			- _multiplicity = "";
+			- _itsStateChart = { IHandle 
+				- _m2Class = "";
+			}
+			- Associations = { IRPYRawContainer 
+				- size = 1;
+				- value = 
+				{ IPart 
+					- _id = GUID ba09b104-5258-48b5-900c-79bb39790539;
+					- _myState = 8192;
+					- _name = "Main";
+					- _displayName = "Main";
+					- _objectCreation = "2228973342018115124422";
+					- _umlDependencyID = "1873";
+					- _multiplicity = "1";
+					- _otherClass = { IClassifierHandle 
+						- _m2Class = "IClass";
+						- _id = GUID 0af86710-b5df-4cea-b7b2-218321d1efec;
+					}
+					- _inverse = { IHandle 
+						- _m2Class = "";
+					}
+					- _implicitClass = { IClass 
+						- _id = GUID 0af86710-b5df-4cea-b7b2-218321d1efec;
+						- _myState = 10240;
+						- _name = "Main";
+						- _objectCreation = "2228993342018115122422";
+						- _umlDependencyID = "1873";
+						- _theMainDiagram = { IHandle 
+							- _m2Class = "IDiagram";
+							- _filename = "";
+							- _subsystem = "";
+							- _class = "";
+							- _name = "Model1";
+							- _id = GUID 88dc5ec8-7e59-4e32-900a-24c6fff6af2a;
+						}
+						- weakCGTime = 4.3.2018::13:55:28;
+						- strongCGTime = 4.3.2018::13:55:28;
+						- _multiplicity = "";
+						- _itsStateChart = { IHandle 
+							- _m2Class = "";
+						}
+						- _classModifier = Unspecified;
+					}
+				}
+			}
+			- _classModifier = Unspecified;
+		}
+	}
+	- _configurationRelatedTime = 4.3.2018::13:54:45;
+}
+

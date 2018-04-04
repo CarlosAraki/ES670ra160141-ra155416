@@ -30,9 +30,9 @@
 
 /* ************************************************ */
 /*File name:        main.c                            */
-/*File description: gera onda com período de 100ms  */
+/*File description: gera onda com perÃ­odo de 100ms  */
 /*                     Duty Cycle de 10%                */
-/* Author name:      Carlos Vinícius Araki Oliveira  */
+/* Author name:      Carlos VinÃ­cius Araki Oliveira  */
 /*                     RA:160141                        */
 /*                     Gabriel Bonani Machado            */
 /*                     RA:15416                        */
@@ -46,21 +46,23 @@
 #include "ledswi_hal.h"
 #include "buzzer_hal.h"
 #include "sevenSegments_hal.h"
-static int i = 0;
+
 
 
 int main(void)
 {
+	 /*buzzer_init();*/
+	/*sevenSegments_segInit7Seg();
+	sevenSegments_clearSeg();*/
     mcg_clockInit();// inicializa o clock
     
-    /*-----------------------Lab1---------------------------------
-     /* Write your code here
-     buzzer_init();
-     /* This for loop should be replaced. By default this loop allows a single stepping.
-     for (;;) {
-     /* implementacao da frequencia e do dutycicle da buzzer*/
-     /*
-		 buzzer_setBuzz();
+    /*-----------------------Lab1---------------------------------*/
+
+
+     /* This for loop should be replaced. By default this loop allows a single stepping.*/
+    /* implementacao da frequencia e do dutycicle da buzzer*/
+    /* for (;;) {
+     	 buzzer_setBuzz();
 		 util_genDelay10ms();
 		 buzzer_clearBuzz();
 		 util_genDelay10ms();
@@ -72,34 +74,56 @@ int main(void)
 		 util_genDelay10ms();
 		 util_genDelay10ms();
 		 util_genDelay10ms();
-		 i++;
-     }
-     /* Never leave main
-     -------------------------------------------------------------*/
-    
+     }*/
+
     /*-----------------------Lab2---------------------------------*/
-    /*
+
      for(;;){
 		 ledswi_initLedSwitch(0, 4);
-		 util_genDelay10ms();
 		 if(SWITCH_ON == ledswi_getSwitchStatus(4)){
 			 ledswi_initLedSwitch(4, 0);
 			 ledswi_setLed(4);
+			 ledswi_clearLed(3);
+			 ledswi_clearLed(2);
+			 ledswi_clearLed(1);
+		 }
+		 else if(SWITCH_ON == ledswi_getSwitchStatus(3)){
+			 ledswi_initLedSwitch(4, 0);
+			 ledswi_setLed(3);
+			 ledswi_clearLed(4);
+			 ledswi_clearLed(2);
+			 ledswi_clearLed(1);
+		 }
+		 else if(SWITCH_ON == ledswi_getSwitchStatus(2)){
+			 ledswi_initLedSwitch(4, 0);
+			 ledswi_setLed(2);
+			 ledswi_clearLed(3);
+			 ledswi_clearLed(4);
+			 ledswi_clearLed(1);
+		 }
+		 else if(SWITCH_ON == ledswi_getSwitchStatus(1)){
+			 ledswi_initLedSwitch(4, 0);
+			 ledswi_setLed(1);
+			 ledswi_clearLed(3);
+			 ledswi_clearLed(2);
+			 ledswi_clearLed(4);
 		 }
 		 else{
 			 ledswi_initLedSwitch(4, 0);
 			 ledswi_clearLed(4);
+			 ledswi_clearLed(3);
+			 ledswi_clearLed(2);
+			 ledswi_clearLed(1);
 		 }
-		 util_genDelay10ms();
 		 }
 		 return 0;
-     */
+
     
-    sevenSegments_segInit7Seg();
-    sevenSegments_clearSeg();
+    /*sevenSegments_segInit7Seg();
+    sevenSegments_clearSeg();*/
     
     /*in this for we will write in 7 seg HELLO, calling the functions in write order*/
-    for(;;){
+   /* for(;;){
     	sevenSegments_setSeg('H');
         util_genDelay250us();
         sevenSegments_clearSeg();
@@ -117,7 +141,7 @@ int main(void)
         sevenSegments_clearSeg();
 
     }
-    return 0;
+    return 0;*/
     
 }
 ////////////////////////////////////////////////////////////////////////////////

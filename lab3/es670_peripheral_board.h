@@ -32,7 +32,7 @@
 #define BUZZER_PORT_BASE_PNT        PORTD                                   /* peripheral port base pointer */
 #define BUZZER_GPIO_BASE_PNT        PTD                                     /* peripheral gpio base pointer */
 
-#define BUZZER_PIN                  1U                                      /* buzzer pin */
+#define BUZZER_PIN                  1U                                      /* buzzer pin no pinout está 0 */
 #define BUZZER_DIR                  kGpioDigitalOutput
 #define BUZZER_ALT                  0x01u
 /*                 END OF BUZZER definitions             */
@@ -101,6 +101,8 @@
 #define SEGG_ALT                   0x01u
 #define SEGG_DIR_OUTPUT            (GPIO_OUTPUT << SEGG_PIN)
 
+
+/*this part defines the dot of 7 segments*/
 #define SEGH_PIN                   7U
 #define SEGH_ALT                   SEGA_ALT
 #define SEGH_DIR_OUTPUT            (GPIO_OUTPUT << SEGH_PIN)

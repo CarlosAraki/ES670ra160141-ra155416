@@ -51,10 +51,12 @@
 
 int main(void)
 {
+	/* inicializa o clock*/
+    mcg_clockInit();
+
 	 /*buzzer_init();*/
-	/*sevenSegments_segInit7Seg();
-	sevenSegments_clearSeg();*/
-    mcg_clockInit();// inicializa o clock
+	sevenSegments_segInit7Seg();
+	sevenSegments_clearSeg();
     
     /*-----------------------Lab1---------------------------------*/
 
@@ -115,15 +117,13 @@ int main(void)
 			 ledswi_clearLed(2);
 			 ledswi_clearLed(1);
 		 }
-		 }
-		 return 0;
+
 
     
-    /*sevenSegments_segInit7Seg();
-    sevenSegments_clearSeg();*/
+
     
     /*in this for we will write in 7 seg HELLO, calling the functions in write order*/
-   /* for(;;){
+
     	sevenSegments_setSeg('H');
         util_genDelay250us();
         sevenSegments_clearSeg();
@@ -141,7 +141,7 @@ int main(void)
         sevenSegments_clearSeg();
 
     }
-    return 0;*/
+    return 0;
     
 }
 ////////////////////////////////////////////////////////////////////////////////

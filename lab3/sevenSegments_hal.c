@@ -11,9 +11,6 @@
 #include "sevenSegments_hal.h"
 #include "es670_peripheral_board.h"
 
-
-
-
 /* ************************************************ */
 /* Method name:        segInit7Seg                  */
 /* Method description: Initialize the segments and  */
@@ -22,7 +19,8 @@
 /* Output params:      n/a                          */
 /* ************************************************ */
 
-void segInit7Seg(void){
+void sevenSegments_segInit7Seg(void)
+{
     /* un-gate port clock*/
     SIM_SCGC5 = SIM_SCGC5_PORTC(CGC_CLOCK_ENABLED);
     
@@ -61,7 +59,8 @@ void segInit7Seg(void){
 /* Output params:      n/a                          */
 /* ************************************************ */
 
-void setSegO(void){
+void  sevenSegments_setSegO(void)
+{
     GPIOC_PSOR = GPIO_PSOR_PTSO( (0x01U << SEGA_PIN) );
     GPIOC_PSOR = GPIO_PSOR_PTSO( (0x01U << SEGB_PIN) );
     GPIOC_PSOR = GPIO_PSOR_PTSO( (0x01U << SEGC_PIN) );
@@ -69,7 +68,6 @@ void setSegO(void){
     GPIOC_PSOR = GPIO_PSOR_PTSO( (0x01U << SEGE_PIN) );
     GPIOC_PSOR = GPIO_PSOR_PTSO( (0x01U << SEGF_PIN) );
     GPIOC_PSOR = GPIO_PSOR_PTSO( (0x01U << SEG1_PIN) );
-    
 }
 
 /* ************************************************ */
@@ -81,7 +79,8 @@ void setSegO(void){
 /* ************************************************ */
 
 
-void setSegL(void){
+void  sevenSegments_setSegL(void)
+{
     GPIOC_PSOR = GPIO_PSOR_PTSO( (0x01U << SEGB_PIN) );
     GPIOC_PSOR = GPIO_PSOR_PTSO( (0x01U << SEGC_PIN) );
     GPIOC_PSOR = GPIO_PSOR_PTSO( (0x01U << SEGE_PIN) );
@@ -98,7 +97,8 @@ void setSegL(void){
 /* ************************************************ */
 
 
-void setSegE(void){
+void  sevenSegments_setSegE(void)
+{
     GPIOC_PSOR = GPIO_PSOR_PTSO( (0x01U << SEGA_PIN) );
     GPIOC_PSOR = GPIO_PSOR_PTSO( (0x01U << SEGD_PIN) );
     GPIOC_PSOR = GPIO_PSOR_PTSO( (0x01U << SEGG_PIN) );
@@ -116,7 +116,8 @@ void setSegE(void){
 /* ************************************************ */
 
 
-void setSegH(void){
+void  sevenSegments_setSegH(void)
+{
     GPIOC_PSOR = GPIO_PSOR_PTSO( (0x01U << SEGB_PIN) );
     GPIOC_PSOR = GPIO_PSOR_PTSO( (0x01U << SEGC_PIN) );
     GPIOC_PSOR = GPIO_PSOR_PTSO( (0x01U << SEGG_PIN) );
@@ -124,7 +125,6 @@ void setSegH(void){
     GPIOC_PSOR = GPIO_PSOR_PTSO( (0x01U << SEGF_PIN) );
     GPIOC_PSOR = GPIO_PSOR_PTSO( (0x01U << SEG4_PIN) );
 }
-
 
 /* ************************************************ */
 /* Method name:        clearSeg                     */
@@ -135,7 +135,8 @@ void setSegH(void){
 /* ************************************************ */
 
 
-void clearSeg(void){
+void  sevenSegments_clearSeg(void)
+{
     GPIOC_PCOR = GPIO_PCOR_PTCO( (0x01U << SEGA_PIN) );
     GPIOC_PCOR = GPIO_PCOR_PTCO( (0x01U << SEGB_PIN) );
     GPIOC_PCOR = GPIO_PCOR_PTCO( (0x01U << SEGC_PIN) );
@@ -149,4 +150,27 @@ void clearSeg(void){
     GPIOC_PCOR = GPIO_PCOR_PTCO( (0x01U << SEG3_PIN) );
     GPIOC_PCOR = GPIO_PCOR_PTCO( (0x01U << SEG4_PIN) );
     
+}
+
+
+/* ************************************************ */
+/* Method name:        setSeg                       */
+/* Method description: this function write char c   */
+/* in Display                                       */
+/* Input params:       char C                       */
+/* Output params:      n/a                          */
+/* ************************************************ */
+
+void  sevenSegments_setSeg(char C)
+{
+	switch(C){
+		case 'H':  sevenSegments_setSegH();
+			break;
+		case 'E':  sevenSegments_setSegE();
+			break;
+		case 'l':  sevenSegments_setSegL();
+			break;
+		case 'O':  sevenSegments_setSegO();
+			break;
+	}
 }

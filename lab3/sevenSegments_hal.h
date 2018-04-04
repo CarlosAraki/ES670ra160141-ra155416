@@ -1,5 +1,5 @@
 /* ***************************************************************** */
-/* File name:        SevenSegments_hal.c                              */
+/* File name:        sevenSegments_hal.c                              */
 /* File description: This file has a couple of useful functions to   */
 /*                   write "Hello" in 7seg from peripheral board     */
 /* Author name:      Carlos Vinícius Araki Oliveira                  */
@@ -8,8 +8,7 @@
 /* Revision date:    ----------                                      */
 /* ***************************************************************** */
 
-#ifndef SOURCES_SEVENSEGMENTS_HAL_H_
-#define SOURCES_SEVENSEGMENTS_HAL_H_
+
 
 /* ************************************************ */
 /* Method name:        segInit7Seg                  */
@@ -19,7 +18,7 @@
 /* Output params:      n/a                          */
 /* ************************************************ */
 
-void segInit7Seg(void);
+void sevenSegments_segInit7Seg(void);
 
 /* ************************************************ */
 /* Method name:        setSegO                      */
@@ -29,7 +28,7 @@ void segInit7Seg(void);
 /* Output params:      n/a                          */
 /* ************************************************ */
 
-void setSegO(void);
+void sevenSegments_setSegO(void);
 
 
 /* ************************************************ */
@@ -40,7 +39,7 @@ void setSegO(void);
 /* Output params:      n/a                          */
 /* ************************************************ */
 
-void setSegL(void);
+void sevenSegments_setSegL(void);
 
 
 /* ************************************************ */
@@ -52,7 +51,7 @@ void setSegL(void);
 /* ************************************************ */
 
 
-void setSegE(void);
+void sevenSegments_setSegE(void);
 
 /* ************************************************ */
 /* Method name:        setSegH                      */
@@ -62,15 +61,24 @@ void setSegE(void);
 /* Output params:      n/a                          */
 /* ************************************************ */
 
-void setSegH(void);
-
+void sevenSegments_setSegH(void);
 
 /* ************************************************ */
-/* Method name:        clearSeg                     */
-/* Method description: this function clear the      */
-/* display                                          */
+/* Method name:        setSegError                  */
+/* Method description: this function Write only one */
+/*segC in display									*/
 /* Input params:       n/a                          */
 /* Output params:      n/a                          */
 /* ************************************************ */
 
-void clearSeg(void);
+void sevenSegments_clearSeg(void);
+
+/* ************************************************ */
+/* Method name:        setSeg                     	*/
+/* Method description: this function write char c 	*/
+/* in Display                                       */
+/* Input params:       char C                       */
+/* Output params:      n/a                          */
+/* ************************************************ */
+
+void sevenSegments_setSeg(char C);

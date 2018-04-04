@@ -29,81 +29,96 @@
  */
 
 /* ************************************************ */
-/*File name:        main.c					        */
-/*File description: gera onda com período de 100ms  */
-/* 					Duty Cycle de 10%				*/
-/* Author name:  	Carlos Vinícius Araki Oliveira  */
-/* 					RA:160141						*/
-/* 					Gabriel Bonani Machado			*/
-/* 					RA:15416                        */
+/*File name:        main.c                            */
+/*File description: gera onda com perÃ­odo de 100ms  */
+/*                     Duty Cycle de 10%                */
+/* Author name:      Carlos VinÃ­cius Araki Oliveira  */
+/*                     RA:160141                        */
+/*                     Gabriel Bonani Machado            */
+/*                     RA:15416                        */
 /* Creation date:   12/03/2018                      */
 /* ************************************************ */
 
 #include "fsl_device_registers.h"
-#include "buzzer_hal.h"
+#include "es670_peripheral_board.h"
 #include "mcg_hal.h"
 #include "util.h"
 #include "ledswi_hal.h"
-#include "es670_peripheral_board.h"
-#include "7seg_hal.h"
+#include "buzzer_hal.h"
+#include "sevenSegments_hal.h"
 static int i = 0;
 
 
 int main(void)
 {
-	mcg_clockInit();// inicializa o clock
-	char LedNum = 0, SwitchNum = 4;
+    mcg_clockInit();// inicializa o clock
+    
+    /*-----------------------Lab1---------------------------------
+     /* Write your code here
+     buzzer_init();
+     /* This for loop should be replaced. By default this loop allows a single stepping.
+     for (;;) {
+     /* implementacao da frequencia e do dutycicle da buzzer*/
+     /*
+		 buzzer_setBuzz();
+		 util_genDelay10ms();
+		 buzzer_clearBuzz();
+		 util_genDelay10ms();
+		 util_genDelay10ms();
+		 util_genDelay10ms();
+		 util_genDelay10ms();
+		 util_genDelay10ms();
+		 util_genDelay10ms();
+		 util_genDelay10ms();
+		 util_genDelay10ms();
+		 util_genDelay10ms();
+		 i++;
+     }
+     /* Never leave main
+     -------------------------------------------------------------*/
+    
+    /*-----------------------Lab2---------------------------------*/
+    /*
+     for(;;){
+		 ledswi_initLedSwitch(0, 4);
+		 util_genDelay10ms();
+		 if(SWITCH_ON == ledswi_getSwitchStatus(4)){
+			 ledswi_initLedSwitch(4, 0);
+			 ledswi_setLed(4);
+		 }
+		 else{
+			 ledswi_initLedSwitch(4, 0);
+			 ledswi_clearLed(4);
+		 }
+		 util_genDelay10ms();
+		 }
+		 return 0;
+     */
+    
+    sevenSegments_segInit7Seg();
+    sevenSegments_clearSeg();
+    
+    /*in this for we will write in 7 seg HELLO, calling the functions in write order*/
+    for(;;){
+    	sevenSegments_setSeg('H');
+        util_genDelay250us();
+        sevenSegments_clearSeg();
 
+        sevenSegments_setSeg('E');
+        util_genDelay250us();
+        sevenSegments_clearSeg();
 
-/*-----------------------Lab1---------------------------------
-    /* Write your code here
+        sevenSegments_setSeg('l');
+        util_genDelay250us();
+        sevenSegments_clearSeg();
 
-	buzzer_init();
-    /* This for loop should be replaced. By default this loop allows a single stepping.
-    for (;;) {
-    	/*
-    	 * implementacao da frequencia e do dutycicle da buzzer
-    	buzzer_setBuzz();
-    	util_genDelay10ms();
-    	buzzer_clearBuzz();
-    	util_genDelay10ms();
-    	util_genDelay10ms();
-    	util_genDelay10ms();
-		util_genDelay10ms();
-		util_genDelay10ms();
-		util_genDelay10ms();
-		util_genDelay10ms();
-		util_genDelay10ms();
-		util_genDelay10ms();
-        i++;
+        sevenSegments_setSeg('O');
+        util_genDelay250us();
+        sevenSegments_clearSeg();
+
     }
-    /* Never leave main
-
- -------------------------------------------------------------*/
-
-/*-----------------------Lab2---------------------------------*/
-/*	for(;;){
-		ledswi_initLedSwitch(0, 4);
-		util_genDelay10ms();
-		if(SWITCH_ON == ledswi_getSwitchStatus(4)){
-			ledswi_initLedSwitch(4, 0);
-			ledswi_setLed(4);
-		}
-		else{
-			ledswi_initLedSwitch(4, 0);
-			ledswi_clearLed(4);
-		}
-		util_genDelay10ms();
-	}
-	return 0;*/
-	seg_init();
-	clear_Seg();
-	for(;;){
-
-			set_Seg(1,1,1);
-		}
-		return 0;
-
+    return 0;
+    
 }
 ////////////////////////////////////////////////////////////////////////////////
 // EOF

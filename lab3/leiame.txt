@@ -1,0 +1,37 @@
+======================================================
+ES670 - Laboratório (semanas 04 e 05)
+Prof. Denis Loubach
+======================================================
+
+"Roteiro rápido"
+
+1 - Criar um projeto no KDS e adicionar os arquivos .c e .h fornecidos
+    Caso já tenha criado um projeto anteriormente, este poderá ser reutilizado
+    
+2 - Adicionar os PATHS dos INCLUDE FILES no projeto (caso ainda não adicionado)
+C:\Freescale\KSDK_1.2.0\platform\system\inc
+C:\Freescale\KSDK_1.2.0\platform\hal\inc
+C:\Freescale\KSDK_1.2.0\platform\drivers\inc
+C:\Freescale\KSDK_1.2.0\platform\utilities\inc
+
+3 - Adicionar a bibliteca do KSDK ao projeto na parte do Linker (caso ainda não tenha adicionado)
+c:\Freescale\KSDK_1.2.0\lib\ksdk_platform_lib\kds\KL25Z4\debug\libksdk_platform.a
+
+4 - Criar o ponto de entrada do software embarcado (main)
+
+5 - Utilizar o exemplo do executivo cíclico cooperativo como laço principal do software
+Não precisa implementar a parte da interrupção, somente o laço de loop por software
+
+6 - Inicializar o periférico de clock
+mcg_clockInit();
+
+7 - Inicializar os outros periféricos (led, switch)
+
+8 - Desenvolver e inicializar o periférico DISPLAY 7 SEGMENTOS
+
+
+Utilizar as funções de temporização por laço de software (ex.: util_genDelay10ms) disponíveis no util.h
+
+Atentar para a questão do
+    #define USING_OPENSDA_DEBUG
+presente no código de LED e SWITCH

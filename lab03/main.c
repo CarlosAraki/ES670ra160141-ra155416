@@ -43,9 +43,9 @@
 #include "es670_peripheral_board.h"
 #include "mcg_hal.h"
 #include "util.h"
-#include "ledswi_hal.h"
-#include "buzzer_hal.h"
-#include "sevenSegments_hal.h"
+#include "/LEDSWITCH/ledswi_hal.h"
+#include "/BUZZER/buzzer_hal.h"
+#include "/SEVENSEGMENTS/sevenSegments_hal.h"
 
 
 

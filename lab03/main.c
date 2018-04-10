@@ -28,14 +28,13 @@
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-/* ************************************************ */
-/*File name:        main.c                            */
-/*File description: gera onda com perÃ­odo de 100ms  */
-/*                     Duty Cycle de 10%                */
-/* Author name:      Carlos VinÃ­cius Araki Oliveira  */
-/*                     RA:160141                        */
-/*                     Gabriel Bonani Machado            */
-/*                     RA:15416                        */
+/* **************************************************/
+/*File name:        main.c                          */
+/*File description:  								*/
+/* Author name:      Carlos VinÃ­cius Araki Oliveira */
+/*                     RA:160141                    */
+/*                     Gabriel Bonani Machado       */
+/*                     RA:15416                     */
 /* Creation date:   12/03/2018                      */
 /* ************************************************ */
 
@@ -124,21 +123,22 @@ int main(void)
     
     /*in this for we will write in 7 seg HELLO, calling the functions in write order*/
 
-    	sevenSegments_setSeg('H');
-        util_genDelay250us();
+    	sevenSegments_setSeg(1,1);
+        util_genDelay1ms();
         sevenSegments_clearSeg();
 
-        sevenSegments_setSeg('E');
-        util_genDelay250us();
+        sevenSegments_setSeg(2,2);
+        util_genDelay1ms();
         sevenSegments_clearSeg();
 
-        sevenSegments_setSeg('l');
-        util_genDelay250us();
+        sevenSegments_setSeg(5,3);
+        util_genDelay1ms();
         sevenSegments_clearSeg();
 
-        sevenSegments_setSeg('O');
-        util_genDelay250us();
+        sevenSegments_setSeg(6,4);
+        util_genDelay1ms();
         sevenSegments_clearSeg();
+
 
     }
     return 0;

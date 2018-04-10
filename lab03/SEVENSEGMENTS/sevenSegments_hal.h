@@ -28,30 +28,7 @@ void sevenSegments_segInit7Seg(void);
 /* Output params:      n/a                          */
 /* ************************************************ */
 
-void  sevenSegments_setSegPin(char c)
-{
-    switch(c){
-        case 1:GPIOC_PSOR = GPIO_PSOR_PTSO( 0x60U << SEGA_PIN ) ;
-        break;
-        case 2:GPIOC_PSOR = GPIO_PSOR_PTSO( 0xdaU << SEGA_PIN ) ;
-        break;
-        case 3:GPIOC_PSOR = GPIO_PSOR_PTSO( 0xf2U << SEGA_PIN ) ;
-        break;
-        case 4:GPIOC_PSOR = GPIO_PSOR_PTSO( 0x66U << SEGA_PIN ) ;
-        break;
-        case 5:GPIOC_PSOR = GPIO_PSOR_PTSO( 0xb6U << SEGA_PIN ) ;
-        break;
-        case 6:GPIOC_PSOR = GPIO_PSOR_PTSO( 0xbeU << SEGA_PIN ) ;
-        break;
-        case 7:GPIOC_PSOR = GPIO_PSOR_PTSO( 0xe2U << SEGA_PIN ) ;
-        break;
-        case 8:GPIOC_PSOR = GPIO_PSOR_PTSO( 0xfeU << SEGA_PIN ) ;
-        break;
-        case 9:GPIOC_PSOR = GPIO_PSOR_PTSO( 0xf6U << SEGA_PIN ) ;
-        break;
-    }
-    
-}
+void  sevenSegments_setSegPin(char c);
 
 /* ************************************************ */
 /* Method name:        setSegDisplay                */
@@ -61,19 +38,7 @@ void  sevenSegments_setSegPin(char c)
 /* Output params:      n/a                          */
 /* ************************************************ */
 
-void  sevenSegments_setSegDisplay(char selected)
-{
-    switch(selected){
-        case 1:GPIOC_PSOR = GPIO_PSOR_PTSO( (0x01U << SEG1_PIN) );
-            break;
-        case 2:GPIOC_PSOR = GPIO_PSOR_PTSO( (0x01U << SEG2_PIN) );
-            break;
-        case 3:GPIOC_PSOR = GPIO_PSOR_PTSO( (0x01U << SEG3_PIN) );
-            break;
-        case 4:GPIOC_PSOR = GPIO_PSOR_PTSO( (0x01U << SEG4_PIN) );
-            break;
-    }
-}
+void  sevenSegments_setSegDisplay(char selected);
 
 /* ************************************************ */
 /* Method name:        clearSeg                     */

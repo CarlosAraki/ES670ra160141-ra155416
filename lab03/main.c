@@ -42,9 +42,9 @@
 #include "es670_peripheral_board.h"
 #include "mcg_hal.h"
 #include "util.h"
-#include "/LEDSWITCH/ledswi_hal.h"
-#include "/BUZZER/buzzer_hal.h"
-#include "/SEVENSEGMENTS/sevenSegments_hal.h"
+#include "\Users\aluno\Documents\Jorgito2\ES670\Sources\LEDSWITCH\ledswi_hal.h"
+#include "\Users\aluno\Documents\Jorgito2\ES670\Sources\BUZZER\buzzer_hal.h"
+#include "\Users\aluno\Documents\Jorgito2\ES670\Sources\SEVENSEGMENTS\sevenSegments_hal.h"
 
 
 
@@ -53,7 +53,7 @@ int main(void)
 	/* inicializa o clock*/
     mcg_clockInit();
 
-	 /*buzzer_init();*/
+	buzzer_init();
 	sevenSegments_segInit7Seg();
 	sevenSegments_clearSeg();
     
@@ -62,25 +62,25 @@ int main(void)
 
      /* This for loop should be replaced. By default this loop allows a single stepping.*/
     /* implementacao da frequencia e do dutycicle da buzzer*/
-    /* for (;;) {
-     	 buzzer_setBuzz();
-		 util_genDelay10ms();
-		 buzzer_clearBuzz();
-		 util_genDelay10ms();
-		 util_genDelay10ms();
-		 util_genDelay10ms();
-		 util_genDelay10ms();
-		 util_genDelay10ms();
-		 util_genDelay10ms();
-		 util_genDelay10ms();
-		 util_genDelay10ms();
-		 util_genDelay10ms();
-     }*/
+
+	 buzzer_setBuzz();
+	 util_genDelay10ms();
+	 buzzer_clearBuzz();
+	 util_genDelay10ms();
+	 util_genDelay10ms();
+	 util_genDelay10ms();
+	 util_genDelay10ms();
+	 util_genDelay10ms();
+	 util_genDelay10ms();
+	 util_genDelay10ms();
+	 util_genDelay10ms();
+	 util_genDelay10ms();
+
 
     /*-----------------------Lab2---------------------------------*/
 
      for(;;){
-		 ledswi_initLedSwitch(0, 4);
+    	 ledswi_initLedSwitch(0, 4);
 		 if(SWITCH_ON == ledswi_getSwitchStatus(4)){
 			 ledswi_initLedSwitch(4, 0);
 			 ledswi_setLed(4);
@@ -116,29 +116,21 @@ int main(void)
 			 ledswi_clearLed(2);
 			 ledswi_clearLed(1);
 		 }
-
-
-    
-
-    
-    /*in this for we will write in 7 seg HELLO, calling the functions in write order*/
-
     	sevenSegments_setSeg(1,1);
         util_genDelay1ms();
         sevenSegments_clearSeg();
 
         sevenSegments_setSeg(2,2);
-        util_genDelay1ms();
-        sevenSegments_clearSeg();
+		util_genDelay1ms();
+		sevenSegments_clearSeg();
 
-        sevenSegments_setSeg(5,3);
-        util_genDelay1ms();
-        sevenSegments_clearSeg();
+		sevenSegments_setSeg(5,3);
+		util_genDelay1ms();
+		sevenSegments_clearSeg();
 
-        sevenSegments_setSeg(6,4);
-        util_genDelay1ms();
-        sevenSegments_clearSeg();
-
+		sevenSegments_setSeg(6,4);
+		util_genDelay1ms();
+		sevenSegments_clearSeg();
 
     }
     return 0;

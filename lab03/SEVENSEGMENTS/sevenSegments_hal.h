@@ -28,7 +28,7 @@ void sevenSegments_segInit7Seg(void);
 /* Output params:      n/a                          */
 /* ************************************************ */
 
-void  sevenSegments_setSegPin(char c);
+void  sevenSegments_setSegPin(char cPin);
 
 /* ************************************************ */
 /* Method name:        setSegDisplay                */
@@ -38,7 +38,7 @@ void  sevenSegments_setSegPin(char c);
 /* Output params:      n/a                          */
 /* ************************************************ */
 
-void  sevenSegments_setSegDisplay(char selected);
+void  sevenSegments_setSegDisplay(char cSelected);
 
 /* ************************************************ */
 /* Method name:        clearSeg                     */
@@ -59,4 +59,4 @@ void sevenSegments_clearSeg(void);
 /* Output params:      n/a                          */
 /* ************************************************ */
 
-void sevenSegments_setSeg(char C);
+void sevenSegments_setSeg(char cPin,char cSelected);

@@ -124,11 +124,11 @@ int main(void)
 		util_genDelay1ms();
 		sevenSegments_clearSeg();
 
-		sevenSegments_setSeg(5,3);
+		sevenSegments_setSeg(8,3);
 		util_genDelay1ms();
 		sevenSegments_clearSeg();
 
-		sevenSegments_setSeg(6,4);
+		sevenSegments_setSeg(9,4);
 		util_genDelay1ms();
 		sevenSegments_clearSeg();
 

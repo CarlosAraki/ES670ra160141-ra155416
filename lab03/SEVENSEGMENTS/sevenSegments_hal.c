@@ -60,6 +60,7 @@ void sevenSegments_segInit7Seg(void)
 
 void  sevenSegments_setSegPin(char cPin)
 {
+	GPIOC_PSOR = GPIO_PSOR_PTSO( 0x01U << SEGH_PIN ) ;
     switch(cPin){
         case 1:GPIOC_PSOR = GPIO_PSOR_PTSO( 0x06U << SEGA_PIN ) ;
         break;
@@ -128,15 +129,13 @@ void  sevenSegments_clearSeg(void)
     GPIOC_PCOR = GPIO_PCOR_PTCO( (0x01U << SEGF_PIN) );
     GPIOC_PCOR = GPIO_PCOR_PTCO( (0x01U << SEGG_PIN) );
     GPIOC_PCOR = GPIO_PCOR_PTCO( (0x01U << SEGH_PIN) );
-
-    
 }
 
 
 /* ************************************************ */
 /* Method name:        setSeg                       */
 /* Method description: this function write char c   */
-/* in Display selected                                      */
+/* in Display selected                              */
 /* Input params:       char C                       */
 /* Output params:      n/a                          */
 /* ************************************************ */

@@ -3,19 +3,7 @@
 #include "\Users\aluno\Documents\Jorgito2\ES670\Sources\LEDSWITCH\ledswi_hal.h"
 #include "\Users\aluno\Documents\Jorgito2\ES670\Sources\BUZZER\buzzer_hal.h"
 
-void error(void){
-	PUTCHAR('E');
-	PUTCHAR('R');
-	PUTCHAR('R');
 
-}
-
-void ack(void){
-
-	PUTCHAR('A');
-	PUTCHAR('C');
-	PUTCHAR('K');
-}
 
 
 
@@ -33,7 +21,9 @@ char interpretState(char cComando, char cEstado){
 					return cComando;
 				break;
 			default:
-				error();
+				PUTCHAR('E');
+				PUTCHAR('R');
+				PUTCHAR('R');
 				return 'I';
 		}
 	}
@@ -48,7 +38,9 @@ char interpretState(char cComando, char cEstado){
 				return 'A';
 				break;
 			default:
-				error();
+				PUTCHAR('E');
+				PUTCHAR('R');
+				PUTCHAR('R');
 				return 'I';
 		}
 	}
@@ -56,13 +48,17 @@ char interpretState(char cComando, char cEstado){
 
 	if(cEstado == 'A'){
 		if(cComando <= '4' && cComando >= '1'){
-			ack();
+			PUTCHAR('A');
+			PUTCHAR('C');
+			PUTCHAR('K');
 			ledswi_initLedSwitch(4, 0);
 			ledswi_setLed(cComando-48);
 			return 'I';
 		}
 		else{
-			error();
+			PUTCHAR('E');
+			PUTCHAR('R');
+			PUTCHAR('R');
 			return 'I';
 		}
 
@@ -71,13 +67,17 @@ char interpretState(char cComando, char cEstado){
 
 	else if(cEstado == 'C'){
 			if(cComando <= '4' && cComando >= '1'){
-				ack();
+				PUTCHAR('A');
+				PUTCHAR('C');
+				PUTCHAR('K');
 				ledswi_initLedSwitch(4, 0);
 				ledswi_clearLed(cComando-48);
 				return 'I';
 			}
 			else{
-				error();
+				PUTCHAR('E');
+				PUTCHAR('R');
+				PUTCHAR('R');
 				return 'I';
 			}
 
@@ -86,7 +86,9 @@ char interpretState(char cComando, char cEstado){
 
 	else if(cEstado == 'S'){
 				if(cComando <= '4' && cComando >= '1'){
-					ack();
+					PUTCHAR('A');
+					PUTCHAR('C');
+					PUTCHAR('K');
 					ledswi_initLedSwitch(0, 4);
 					if(SWITCH_ON == ledswi_getSwitchStatus(cComando-48)){
 						PUTCHAR('O');
@@ -104,7 +106,9 @@ char interpretState(char cComando, char cEstado){
 				}
 
 				else{
-					error();
+					PUTCHAR('E');
+					PUTCHAR('R');
+					PUTCHAR('R');
 					return 'I';
 				}
 

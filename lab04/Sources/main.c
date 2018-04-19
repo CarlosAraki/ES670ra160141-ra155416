@@ -91,13 +91,17 @@ int main(void)
 							iValor = iValor + (cComando -48);
 							iFlag = 0;
 							cEstado = 'I';
-							ack();
+							PUTCHAR('A');
+							PUTCHAR('C');
+							PUTCHAR('K');
 							buzzer_freq(iValor);
 
 						}
 				}
 					else{
-						error();
+						PUTCHAR('E');
+						PUTCHAR('R');
+						PUTCHAR('R');
 						iFlag = 0;
 						cEstado = 'I';
 					}

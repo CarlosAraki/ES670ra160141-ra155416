@@ -1,0 +1,25 @@
+======================================================
+ES670 - Laboratório (semanas 06 e 07)
+Prof. Denis Loubach
+======================================================
+
+"Roteiro rápido"
+
+0 - Incluir os códigos fontes fornecidos no seu projeto
+
+1 - Fazer os includes abaixo:
+#include "Util/debugUart.h"
+/* system includes */
+#include "fsl_debug_console.h"
+
+2 - Iniciatlizar a UART0 como debug (verificar como o periférico está sendo inicializado)
+debugUart_init();
+
+3 - Utilizar as chamadas de read/write na serial (verificar qual a implementação destas macros)
+uiReceiveBuff = GETCHAR();
+PUTCHAR(uiReceiveBuff);
+
+antes da leitura, verificar se existe algum dado na serial
+UART0_BRD_S1_RDRF(UART0)
+
+4 - Utilizar qualquer software aplicativo no host para verificar a comunicação serial com o target

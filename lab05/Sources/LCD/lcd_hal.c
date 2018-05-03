@@ -1,8 +1,8 @@
 /* ***************************************************************** */
 /* File name:        lcd_hal.c                                       */
-/* File description: File dedicated to the hardware abstraction layer*/
-/*                   related to the LCD HARDWARE based on the KS006U */
-/*                   controller                                      */
+/* File description: Header file containing the functions/methods    */
+/*                   interfaces for handling the LCD hardware from   */
+/*                   the hardware kit                                */
 /* Author name:      CarlosAraki/gabmac/dloubach                     */
 /* Creation date:    16out2015                                       */
 /* Revision date:    03mai2018                                       */

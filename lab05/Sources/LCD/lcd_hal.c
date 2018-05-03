@@ -3,9 +3,9 @@
 /* File description: File dedicated to the hardware abstraction layer*/
 /*                   related to the LCD HARDWARE based on the KS006U */
 /*                   controller                                      */
-/* Author name:      dloubach                                        */
+/* Author name:      CarlosAraki/gabmac/dloubach                     */
 /* Creation date:    16out2015                                       */
-/* Revision date:    25fev2016                                       */
+/* Revision date:    03mai2018                                       */
 /* ***************************************************************** */
 
 #include "lcd_hal.h"
@@ -16,7 +16,7 @@
 
 /* line and columns */
 #define LINE0        0U
-#define COLUMN0        0U
+#define COLUMN0      0U
 
 #define L0C0_BASE    0x80 /* line 0, column 0 */
 #define L1C0_BASE    0xC0 /* line 1, column 0 */

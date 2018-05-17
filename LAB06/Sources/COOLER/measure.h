@@ -8,13 +8,32 @@
 #ifndef  SOURCES_MEASURE_H_
 #define  SOURCES_MEASURE_H_
 
-
+/* ************************************************ */
+/* Method name:        counter_init                 */
+/* Method description:Initialize TPM0 and tachometer*/
+/* function  										*/
+/* Input params:       n/a                          */
+/* Output params:      n/a                          */
+/* ************************************************ */
 void counter_init(void);
 
-
+/* ************************************************ */
+/* Method name:        counter_cont                 */
+/* Method description: Return TPM0_CNT Value        */
+/* function  										*/
+/* Input params:       n/a                          */
+/* Output params:      int  icont                   */
+/* ************************************************ */
 int counter_cont(void);
-void counter_clear(void);
 
-void counter_String(int cont);
+/* ************************************************ */
+/* Method name:        counter_String               */
+/* Method description:Transform int cont in LCD     */
+/* string                                           */
+/* function  										*/
+/* Input params:       int cont                     */
+/* Output params:      n/a                          */
+/* ************************************************ */
+void counter_String(int iCont);
 
-#endif /* SDK_PLATFORM_DEVICES_MKL25Z4_INCLUDE_MEASURE_H_ */
+#endif /*_MEASURE_H_ */

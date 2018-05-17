@@ -9,6 +9,13 @@
 #include "cooler_hal.h"
 #include "../PERIPHERAL/es670_peripheral_board.h"
 
+/* ************************************************ */
+/* Method name:        cooler_init                  */
+/* Method description: Initialize the cooler		*/
+/* function  										*/
+/* Input params:       n/a                          */
+/* Output params:      n/a                          */
+/* ************************************************ */
 void cooler_Init(void)
 {
     /* un-gate port clock*/
@@ -23,12 +30,26 @@ void cooler_Init(void)
 
 }
 
+/* ************************************************ */
+/* Method name:        cooler_SetPin                */
+/* Method description: Set cooler like GPIO 		*/
+/* function  										*/
+/* Input params:       n/a                          */
+/* Output params:      n/a                          */
+/* ************************************************ */
 
 void cooler_SetPin(void)
 {
 	GPIOA_PSOR = GPIO_PSOR_PTSO(0x01u << COOLER_PIN);
 }
 
+/* ************************************************ */
+/* Method name:        cooler_ClearPin              */
+/* Method description: Clear cooler like GPIO 		*/
+/* function  										*/
+/* Input params:       n/a                          */
+/* Output params:      n/a                          */
+/* ************************************************ */
 void cooler_ClearPin(void)
 {
 	GPIOA_PCOR = GPIO_PCOR_PTCO(0x01u << COOLER_PIN);

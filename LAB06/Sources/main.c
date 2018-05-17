@@ -43,12 +43,12 @@
 #include "SERIAL/debugUart.h"
 #include "SERIAL/interpretCmd.h"
 #include "UTIL/util.h"
+#include "UTIL/tc_hal.h"
 #include "fsl_debug_console.h"
 #include "LEDSWITCH/ledswi_hal.h"
 #include "BUZZER/buzzer_hal.h"
 #include "SEVENSEGMENTS/sevenSegments_hal.h"
 #include "LCD/lcd_hal.h"
-#include "UTIL/tc_hal.h"
 #include "COOLER/cooler_hal.h"
 #include "COOLER/measure.h"
 
@@ -56,10 +56,6 @@
 
 /* system includes */
 #include "fsl_debug_console.h"
-
-/* defines *
-#define CYCLIC_EXECUTIVE_PERIOD         1000 * 1000 /* 1000000 micro seconds */
-
 
 /* globals */
 volatile unsigned int uiFlagNextPeriod = 0;         /* cyclic executive flag */
@@ -89,7 +85,6 @@ int main(void)
 {
     /* board initializations */
 	mcg_clockInit();
-
 	cooler_Init();
     cooler_SetPin();
     counter_init();
@@ -98,15 +93,15 @@ int main(void)
     /* configure cyclic executive interruption */
     tc_installLptmr0(1000000, main_cyclicExecuteIsr);
 
-    unsigned int novo = 0 , antigo = 0;
+    unsigned int uiNovo = 0 , uiAntigo = 0;
     /* cooperative cyclic executive main loop */
     while(1U)
     {
 
-    	novo = counter_cont();
+    	uiNovo = counter_cont();
 
-    	counter_String((((novo - antigo))*60)/7);
-    	antigo = novo;
+    	counter_String((((uiNovo - uiAntigo)))/7);
+    	uiAntigo = uiNovo;
 
         /* WAIT FOR CYCLIC EXECUTIVE PERIOD */
         while(!uiFlagNextPeriod);

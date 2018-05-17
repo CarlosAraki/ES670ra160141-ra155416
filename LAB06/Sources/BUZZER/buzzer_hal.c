@@ -74,7 +74,7 @@ void buzzer_time(int iTempo){
 }
 
 /* ************************************************ */
-/* Method name:        buzzer_freq               */
+/* Method name:        buzzer_freq                  */
 /* Method description: Set the frequence of tehe buzzer               */
 /* Input params:       n/a                          */
 /* Output params:      n/a                          */

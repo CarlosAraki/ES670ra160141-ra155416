@@ -2,38 +2,38 @@
  * measure.h
  *
  *  Created on: 07/05/2018
- *      Author: aluno
+ *      Author: CarlosAraki & Gabriel Bonani
  */
 
 #ifndef  SOURCES_MEASURE_H_
 #define  SOURCES_MEASURE_H_
 
 /* ************************************************ */
-/* Method name:        counter_init                 */
+/* Method name:        measure_Init                 */
 /* Method description:Initialize TPM0 and tachometer*/
 /* function  										*/
 /* Input params:       n/a                          */
 /* Output params:      n/a                          */
 /* ************************************************ */
-void counter_init(void);
+void measure_Init(void);
 
 /* ************************************************ */
-/* Method name:        counter_cont                 */
+/* Method name:        measure_Cont                 */
 /* Method description: Return TPM0_CNT Value        */
 /* function  										*/
 /* Input params:       n/a                          */
-/* Output params:      int  icont                   */
+/* Output params:      int  iCont                   */
 /* ************************************************ */
-int counter_cont(void);
+int measure_Cont(void);
 
 /* ************************************************ */
 /* Method name:        counter_String               */
-/* Method description:Transform int cont in LCD     */
+/* Method description:Transform int iCont in LCD     */
 /* string                                           */
 /* function  										*/
-/* Input params:       int cont                     */
+/* Input params:       int iCont                     */
 /* Output params:      n/a                          */
 /* ************************************************ */
-void counter_String(int iCont);
+void measure_String(int iCont);
 
 #endif /*_MEASURE_H_ */

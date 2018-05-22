@@ -87,10 +87,9 @@ int main(void)
 	mcg_clockInit();
 	cooler_Init();
     cooler_SetPin();
-    counter_init();
+    measure_Init();
     lcd_initLcd();
 
-    /* configure cyclic executive interruption */
     tc_installLptmr0(1000000, main_cyclicExecuteIsr);
 
     unsigned int uiNovo = 0 , uiAntigo = 0;
@@ -98,9 +97,9 @@ int main(void)
     while(1U)
     {
 
-    	uiNovo = counter_cont();
+    	uiNovo = measure_Cont();
 
-    	counter_String((((uiNovo - uiAntigo)))/7);
+    	measure_String((((uiNovo - uiAntigo)))/7);
     	uiAntigo = uiNovo;
 
         /* WAIT FOR CYCLIC EXECUTIVE PERIOD */

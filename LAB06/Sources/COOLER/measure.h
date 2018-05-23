@@ -1,10 +1,10 @@
-/*
- * measure.h
- *
- *  Created on: 07/05/2018
- *      Author: CarlosAraki & Gabriel Bonani
- */
-
+/********************************************************/
+/*File name:		 measure.h			*/
+/*File description: 	measure metodos			*/
+/*Author name: 		CarlosAraki & Gabriel Bonani	*/
+/*Creation date:	16mai2018			*/
+/*Revision date:	22mai2018			*/
+/********************************************************/
 #ifndef  SOURCES_MEASURE_H_
 #define  SOURCES_MEASURE_H_
 

@@ -1,3 +1,10 @@
+/********************************************************/
+/*File name:		 measure.c			*/
+/*File description: 	measure metodos			*/
+/*Author name: 		CarlosAraki & Gabriel Bonani	*/
+/*Creation date:	16mai2018			*/
+/*Revision date:	22mai2018			*/
+/********************************************************/
 
 #include "measure.h"
 #include "../PERIPHERAL/es670_peripheral_board.h"
@@ -18,14 +25,14 @@ void measure_Init(void){
 
 	/*un-gate clock PTE29*/
 	SIM_SCGC5 |= SIM_SCGC5_PORTE(CGC_CLOCK_ENABLED);
-	/**/
+	/*Alternate 4 para clkin0 */
 	PORTE_PCR29 = PORT_PCR_MUX(TACOMETRO_ALT);
 
-	/**/
+	/*selecionar para external clock*/
 	SIM_SOPT4 = SIM_SOPT4_TPM0CLKSEL(SOP4_SEL);
 	SIM_SOPT2 = SIM_SOPT2_TPMSRC(SOP2_SEL);
 
-	/**/
+	/*configuração do tpm,ps,etc*/
 	TPM0_SC |=TPM_SC_PS(SOP4_SEL);
 	TPM0_SC |=TPM_SC_CMOD(SOP2_SEL);
 

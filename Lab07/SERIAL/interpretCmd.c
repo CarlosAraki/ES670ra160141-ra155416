@@ -10,7 +10,9 @@
 #include "debugUart.h"
 #include "fsl_debug_console.h"
 #include "..\LEDSWITCH\ledswi_hal.h"
-#include "..\COOLER/timer_counter.h"
+#include "..\COOLER\timer_counter.h"
+#include "..\BUZZER\buzzer_hal.h"
+#include "interpretCmd.h"
 
 
 /* ************************************************ */
@@ -21,50 +23,99 @@
 /* Output params:      char                         */
 /* ************************************************ */
 
-char interpretCmd_interpretState(char cComando, char cEstado){
+void interpretCmd_interpretState(char cComando){
 
+	static int iFlag = 0;
+	static int iValor = 0;
+	static char cEstado = 'I';
 
-	if(cEstado == 'I'){
+	switch(cEstado){
+
+	case 'I':
 		switch(cComando){
 
+			case 'B':
+					iFlag++;
+					cEstado = cComando;
 			case 'L':
-					return cComando;
+					cEstado = cComando;
 				break;
 			case 'S':
-					return cComando;
+					cEstado = cComando;
 				break;
 			case 'V':
-					return cComando;
+					cEstado = cComando;
+				break;
 			default:
 				PUTCHAR('E');
 				PUTCHAR('R');
 				PUTCHAR('R');
-				return 'I';
+				cEstado = 'I';
 		}
-	}
+		break;
 
-	else if(cEstado == 'V'){
+
+	case 'B':
+
+		if(cComando>= '0' && cComando <='9' ){
+
+			if(iFlag == 1){
+				iValor = (cComando - 48)*100;
+					iFlag++;
+					cEstado = 'B';
+			}
+
+				else if(iFlag == 2){
+					iValor = iValor + (cComando - 48)*10;
+					iFlag++;
+					cEstado = 'B';
+				}
+
+				else if((iFlag) == 3){
+					(iValor) = (iValor) + (cComando -48);
+					(iFlag)= 0;
+					cEstado = 'I';
+					PUTCHAR('A');
+					PUTCHAR('C');
+					PUTCHAR('K');
+					buzzer_freq((iValor));
+					(iValor) = 0;
+					cEstado = 'I';
+				}
+		}
+			else{
+				PUTCHAR('E');
+				PUTCHAR('R');
+				PUTCHAR('R');
+				(iFlag)= 0;
+				cEstado = 'I';
+			}
+	break;
+
+
+
+	case 'V':
 		switch(cComando){
 			case '1':
 				timer_initTPM1AsPWM(0);
 				PUTCHAR('A');
 				PUTCHAR('C');
 				PUTCHAR('K');
-				return 'I';
+				cEstado = 'I';
 				break;
 			case '2':
 				 timer_initTPM1AsPWM(25);
 				PUTCHAR('A');
 				PUTCHAR('C');
 				PUTCHAR('K');
-				return 'I';
+				cEstado = 'I';
 				break;
 			case '3':
 				 timer_initTPM1AsPWM(50);
 				PUTCHAR('A');
 				PUTCHAR('C');
 				PUTCHAR('K');
-				return 'I';
+				cEstado = 'I';
 				break;
 			case '4':
 				 timer_initTPM1AsPWM(75);
@@ -72,79 +123,79 @@ char interpretCmd_interpretState(char cComando, char cEstado){
 				 PUTCHAR('C');
 				 PUTCHAR('K');
 
-				return 'I';
+				cEstado = 'I';
 				break;
 			case '5':
 				timer_initTPM1AsPWM(100);
 				PUTCHAR('A');
 				PUTCHAR('C');
 				PUTCHAR('K');
-				return 'I';
+				cEstado = 'I';
 				break;
 			default:
 				PUTCHAR('E');
 				PUTCHAR('R');
 				PUTCHAR('R');
-				return 'I';
+				cEstado = 'I';
 		}
-	}
+	break;
 
-	else if(cEstado == 'L'){
+	case 'L':
 		switch(cComando){
 			case 'C':
-				return cComando;
+				cEstado = cComando;
 				break;
 			case 'S':
-				return 'A';
+				cEstado = 'A';
 				break;
 			default:
 				PUTCHAR('E');
 				PUTCHAR('R');
 				PUTCHAR('R');
-				return 'I';
+				cEstado = 'I';
 		}
-	}
+	break;
 
 
-	if(cEstado == 'A'){
+	case 'A':
 		if(cComando <= '4' && cComando >= '1'){
 			PUTCHAR('A');
 			PUTCHAR('C');
 			PUTCHAR('K');
 			ledswi_initLedSwitch(4, 0);
 			ledswi_setLed(cComando-48);
-			return 'I';
+			cEstado = 'I';
 		}
 		else{
 			PUTCHAR('E');
 			PUTCHAR('R');
 			PUTCHAR('R');
-			return 'I';
+			cEstado = 'I';
 		}
 
-	}
+	break;
 
 
-	else if(cEstado == 'C'){
+	case 'C':
 			if(cComando <= '4' && cComando >= '1'){
 				PUTCHAR('A');
 				PUTCHAR('C');
 				PUTCHAR('K');
 				ledswi_initLedSwitch(4, 0);
 				ledswi_clearLed(cComando-48);
-				return 'I';
+				cEstado = 'I';
 			}
 			else{
 				PUTCHAR('E');
 				PUTCHAR('R');
 				PUTCHAR('R');
-				return 'I';
+				cEstado = 'I';
 			}
 
-	}
+	break;
 
 
-	else if(cEstado == 'S'){
+	case 'S':
 				if(cComando <= '4' && cComando >= '1'){
 					PUTCHAR('A');
 					PUTCHAR('C');
@@ -153,14 +204,14 @@ char interpretCmd_interpretState(char cComando, char cEstado){
 					if(SWITCH_ON == ledswi_getSwitchStatus(cComando-48)){
 						PUTCHAR('O');
 						PUTCHAR('N');
-						return 'I';
+						cEstado = 'I';
 
 					}
 					else{
 						PUTCHAR('O');
 						PUTCHAR('F');
 						PUTCHAR('F');
-						return 'I';
+						cEstado = 'I';
 
 					}
 				}
@@ -169,12 +220,16 @@ char interpretCmd_interpretState(char cComando, char cEstado){
 					PUTCHAR('E');
 					PUTCHAR('R');
 					PUTCHAR('R');
-					return 'I';
+					cEstado = 'I';
 				}
 
+	break;
+
+	default:
+		cEstado == 'I';
 	}
 
-	return 'I';
-
 }
+
+
 

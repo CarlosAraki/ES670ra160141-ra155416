@@ -75,6 +75,12 @@ void main_cyclicExecuteIsr(void)
 }
 
 
+/*****/
+
+void UART0_IRQHandler(void){
+	 interpretCmd_interpretState(GETCHAR());
+}
+
 
 /* ************************************************ */
 /* Method name:        main                         */
@@ -92,61 +98,17 @@ int main(void)
     debugUart_init();
     buzzer_init();
     tc_installLptmr0(1000000, main_cyclicExecuteIsr);
+    NVIC_EnableIRQ(UART0_IRQn); // habilita interrupcoes de UART0
+    UART0_C2_REG(UART0) |= UART0_C2_RIE(1); // habilita interrupcao para RDRF
 
     unsigned int uiNovo = 0 , uiAntigo = 0;
-    char cComando,cEstado = 'I',cValue;
-    int iFlag = 0,iValor = 0;
+
     /* cooperative cyclic executive main loop */
     while(1U)
     {
     	uiNovo = measure_Cont();
-
     	measure_String((((uiNovo - uiAntigo)))/7);
     	uiAntigo = uiNovo;
-
-    	if(UART0_BRD_S1_RDRF(UART0)){
-
-    					cComando = GETCHAR();
-    					if(cComando == 'B' || cEstado == 'B'){
-    						if(iFlag == 0){
-    							cEstado = cComando;
-    							iFlag++;
-    						}
-    					else if(cComando>= '0' && cComando <='9' ){
-
-    						if(iFlag == 1){
-    								iValor = (cComando - 48)*100;
-    								iFlag++;
-    						}
-
-    							else if(iFlag == 2){
-    								iValor = iValor + (cComando - 48)*10;
-    								iFlag++;
-
-    							}
-
-    							else if(iFlag == 3){
-    								iValor = iValor + (cComando -48);
-    								iFlag = 0;
-    								cEstado = 'I';
-    								PUTCHAR('A');
-    								PUTCHAR('C');
-    								PUTCHAR('K');
-    								buzzer_freq(iValor);
-    							}
-    					}
-    						else{
-    							PUTCHAR('E');
-    							PUTCHAR('R');
-    							PUTCHAR('R');
-    							iFlag = 0;
-    							cEstado = 'I';
-    						}
-    					}
-    					else{
-    						cEstado = interpretCmd_interpretState(cComando,cEstado);
-    					}
-    	}
 
 
         /* WAIT FOR CYCLIC EXECUTIVE PERIOD */

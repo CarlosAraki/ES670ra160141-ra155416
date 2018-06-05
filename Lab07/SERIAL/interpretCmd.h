@@ -18,7 +18,7 @@
 /* Output params:      char                         */
 /* ************************************************ */
 
-char interpretCmd_interpretState(char cComando, char cEstado);
+void interpretCmd_interpretState(char cComando);
 
 
 #endif  /* INTEPRETCMD_ */

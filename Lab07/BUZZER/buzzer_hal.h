@@ -39,5 +39,12 @@ void buzzer_setBuzz(void);
 
 void buzzer_time(int iTempo);
 
-void buzzer_freq(int valor);
+
+/* *******************************************************/
+/* Method name:        buzzer_freq                      */
+/* Method description: Set the frequence of the buzzer */
+/* Input params:       n/a                             */
+/* Output params:      n/a                             */
+/* *****************************************************/
+void buzzer_Freq(int valor);
 #endif /* SOURCES_BUZZER_HAL_H_ */

@@ -73,14 +73,14 @@ void buzzer_time(int iTempo){
 	}
 }
 
-/* ************************************************ */
-/* Method name:        buzzer_freq                  */
-/* Method description: Set the frequence of tehe buzzer               */
-/* Input params:       n/a                          */
-/* Output params:      n/a                          */
-/* ************************************************ */
+/* *******************************************************/
+/* Method name:        buzzer_freq                      */
+/* Method description: Set the frequence of the buzzer */
+/* Input params:       n/a                             */
+/* Output params:      n/a                             */
+/* *****************************************************/
 
-void buzzer_freq(int valor){
+void buzzer_Freq(int valor){
 	int i = 0;
 	for(i = 0; i<(valor/2); i++){
 		buzzer_setBuzz();

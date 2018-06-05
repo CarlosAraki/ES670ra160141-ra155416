@@ -14,8 +14,8 @@
 /* Method name:        interpretState               */
 /* Method description: intepreta e executa comandos */
 /* dependendo do estado em que se encontra          */
-/* Input params:       char cComando,char cEstado   */
-/* Output params:      char                         */
+/* Input params:       char cComando				*/
+/* Output params:      n\a                          */
 /* ************************************************ */
 
 void interpretCmd_interpretState(char cComando);

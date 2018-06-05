@@ -1,3 +1,13 @@
+/* ***************************************************************** */
+/* File name:        timer_counter.c                                 */
+/* File description: cooler metodos para pwm                         */
+/* Author name:      Carlos Vinicius Araki Oliveira                  */
+/*                   Gabriel Bonani Machado                          */
+/* Creation date:    05jun2018                                       */
+/* Revision date:    ----------                                      */
+/* ***************************************************************** */
+
+
 #include "../PERIPHERAL/es670_peripheral_board.h"
 #include "fsl_tpm_hal.h"
 

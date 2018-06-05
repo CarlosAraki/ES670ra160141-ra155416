@@ -4,7 +4,7 @@
 /* Author name:      Carlos Vinicius Araki Oliveira       RA:160141  */
 /*                   Gabriel Bonani Machado               RA:155416  */
 /* Creation date:    19abr2018                                       */
-/* Revision date:    26abr2018                                       */
+/* Revision date:    05jun2018                                       */
 /* ***************************************************************** */
 
 #include "debugUart.h"
@@ -19,8 +19,8 @@
 /* Method name:        interpretState               */
 /* Method description: intepreta e executa comandos */
 /* dependendo do estado em que se encontra          */
-/* Input params:       char cComando,char cEstado   */
-/* Output params:      char                         */
+/* Input params:       char cComando				*/
+/* Output params:      n\a                     	 	*/
 /* ************************************************ */
 
 void interpretCmd_interpretState(char cComando){

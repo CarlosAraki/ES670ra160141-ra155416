@@ -34,7 +34,7 @@
 /* Author name:      Carlos Vinicius Araki Oliveira       RA:160141  */
 /*                   Gabriel Bonani Machado               RA:155416  */
 /* Creation date:    12mar2018                                       */
-/* Revision date:    26abr2018                                       */
+/* Revision date:    05jun2018                                       */
 /* ***************************************************************** */
 
 #include "fsl_device_registers.h"
@@ -74,8 +74,13 @@ void main_cyclicExecuteIsr(void)
     uiFlagNextPeriod = 1;
 }
 
-
-/*****/
+/****************************************************/
+/* Method name:        main_cyclicExecuteIsr        */
+/* Method description: interpretCmd interrupt 		*/
+/*                     service routine              */
+/* Input params:       n/a                          */
+/* Output params:      n/a                          */
+/****************************************************/
 
 void UART0_IRQHandler(void){
 	 interpretCmd_interpretState(GETCHAR());
@@ -86,7 +91,7 @@ void UART0_IRQHandler(void){
 /* Method name:        main                         */
 /* Method description: system entry point           */
 /* Input params:       n/a                          */
-/* Output params:      n/a                   a\\\       */
+/* Output params:      n/a                          */
 /* ************************************************ */
 int main(void)
 {
@@ -98,8 +103,8 @@ int main(void)
     debugUart_init();
     buzzer_init();
     tc_installLptmr0(1000000, main_cyclicExecuteIsr);
-    NVIC_EnableIRQ(UART0_IRQn); // habilita interrupcoes de UART0
-    UART0_C2_REG(UART0) |= UART0_C2_RIE(1); // habilita interrupcao para RDRF
+    NVIC_EnableIRQ(UART0_IRQn); 						/* habilita interrupcoes de UART0 */
+    UART0_C2_REG(UART0) |= UART0_C2_RIE(1); 			/* habilita interrupcao para RDRF */
 
     unsigned int uiNovo = 0 , uiAntigo = 0;
 
@@ -109,8 +114,6 @@ int main(void)
     	uiNovo = measure_Cont();
     	measure_String((((uiNovo - uiAntigo)))/7);
     	uiAntigo = uiNovo;
-
-
         /* WAIT FOR CYCLIC EXECUTIVE PERIOD */
         while(!uiFlagNextPeriod);
     	uiFlagNextPeriod = 0;

@@ -1,0 +1,10 @@
+﻿======================================================
+ES670 - Laboratório (semana 12)
+Prof. Denis Loubach
+======================================================
+
+"Roteiro rápido"
+
+Completar e integrar as funções fornecidas com o código do aluno para configuração do módulo ADC.
+
+Não colocar PWM alto (100%) no heater com o cooler desligado.

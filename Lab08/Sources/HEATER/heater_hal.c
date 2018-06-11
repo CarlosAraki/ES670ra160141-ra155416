@@ -1,5 +1,6 @@
 #include "../PERIPHERAL/es670_peripheral_board.h"
 #include "adc.h"
+#include "lut_adc_3v3.c"
 /* ************************************************** */
 /* Method name: 	   timer_initTPM1AsPWM        */
 /* Method description: configure Timer1 to act as PWM */

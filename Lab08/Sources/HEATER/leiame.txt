@@ -3,6 +3,7 @@ ES670 - Laboratório (semana 12)
 Prof. Denis Loubach
 ======================================================
 
+oi
 "Roteiro rápido"
 
 Completar e integrar as funções fornecidas com o código do aluno para configuração do módulo ADC.

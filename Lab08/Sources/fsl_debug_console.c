@@ -44,7 +44,7 @@
 #endif
 #include "fsl_clock_manager.h"
 #include "fsl_os_abstraction.h"
-#include "print_scan.h"
+#include "SERIAL/print_scan.h"
 
 #if (defined(USB_INSTANCE_COUNT) &&  (defined(BOARD_USE_VIRTUALCOM)))
   #include "usb_device_config.h"

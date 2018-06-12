@@ -18,7 +18,7 @@
 /* Input params:	   n/a 			                  */
 /* Outpu params:	   n/a 		                      */
 /* ************************************************** */
-void timer_initTPM1AsPWM(unsigned int i);
+void timer_initTPM1AsPWM(void);
 
 /* ************************************************ */
 /* Method name:        timer_coolerfan_init         */
@@ -27,5 +27,11 @@ void timer_initTPM1AsPWM(unsigned int i);
 /* Output params:      n/a                          */
 /* ************************************************ */
 void timer_coolerfan_init(void);
+
+void timer_changeHeaterPwm(int iPwm);
+
+void timer_changeCoolerPwm(int i);
+
+void timer_initHeater(void);
 
 #endif /* SOURCES_TIMER_COUNTER_H_ */

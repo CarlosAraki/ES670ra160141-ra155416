@@ -52,7 +52,8 @@
 #include "COOLER/cooler_hal.h"
 #include "COOLER/measure.h"
 #include "COOLER/timer_counter.h"
-#include "HEATER/timer_counter.h"
+#include "HEATER/adc.h"
+#include "HEATER/heater_hal.h"
 
 
 
@@ -97,26 +98,34 @@ void UART0_IRQHandler(void){
 int main(void)
 {
     /* board initializations */
+
 	mcg_clockInit();
 	measure_Init();
     timer_coolerfan_init();
     lcd_initLcd();
     debugUart_init();
     buzzer_init();
-    tc_installLptmr0(1000000, main_cyclicExecuteIsr);
+    tc_installLptmr0(1000000/2, main_cyclicExecuteIsr);
     //NVIC_EnableIRQ(UART0_IRQn); 						/* habilita interrupcoes de UART0 */
     //UART0_C2_REG(UART0) |= UART0_C2_RIE(1); 			/* habilita interrupcao para RDRF */
-    adc_initADCModule();								/* configura ADC*/
+    adc_initADCModule();
+    /* configura ADC*/
+    timer_initTPM1AsPWM();
+    timer_initHeater();
+    timer_coolerfan_init();
+    timer_changeCoolerPwm(40);
+    timer_changeHeaterPwm(80);
 
-    unsigned int uiNovo = 0 , uiAntigo = 0;
+
+
+    //unsigned int uiNovo = 0 , uiAntigo = 0;
 
     /* cooperative cyclic executive main loop */
     while(1U)
     {
-    	/*
-    	uiNovo = measure_Cont();
-    	measure_String((((uiNovo - uiAntigo)))/7);
-    	uiAntigo = uiNovo;*/
+    	heater_hal_StateMachine();
+    	measure_String(heater_hal_getTemp());
+
         /* WAIT FOR CYCLIC EXECUTIVE PERIOD */
 
 

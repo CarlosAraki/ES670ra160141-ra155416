@@ -4,6 +4,9 @@
 /* Input params:	   n/a 			      */
 /* Outpu params:	   n/a 			      */
 /* ************************************************** */
+#ifndef TIMER_
+#define TIMER_
+
 void adc_initADCModule(void);
 
 
@@ -32,3 +35,5 @@ int adc_isAdcDone(void);
 /* Outpu params:	   n/a 			      */
 /* ************************************************** */
 int adc_getConvertionValue(void);
+
+#endif

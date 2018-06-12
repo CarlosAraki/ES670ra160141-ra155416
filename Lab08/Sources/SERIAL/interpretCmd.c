@@ -78,7 +78,7 @@ void interpretCmd_interpretState(char cComando){
 					PUTCHAR('A');
 					PUTCHAR('C');
 					PUTCHAR('K');
-					buzzer_freq((iValor));
+					buzzer_Freq((iValor));
 					(iValor) = 0;
 					cEstado = 'I';
 				}
@@ -97,28 +97,28 @@ void interpretCmd_interpretState(char cComando){
 	case 'V':
 		switch(cComando){
 			case '1':
-				timer_initTPM1AsPWM(0);
+				timer_changeCoolerPwm(0);
 				PUTCHAR('A');
 				PUTCHAR('C');
 				PUTCHAR('K');
 				cEstado = 'I';
 				break;
 			case '2':
-				 timer_initTPM1AsPWM(25);
+				timer_changeCoolerPwm(25);
 				PUTCHAR('A');
 				PUTCHAR('C');
 				PUTCHAR('K');
 				cEstado = 'I';
 				break;
 			case '3':
-				 timer_initTPM1AsPWM(50);
+				timer_changeCoolerPwm(50);
 				PUTCHAR('A');
 				PUTCHAR('C');
 				PUTCHAR('K');
 				cEstado = 'I';
 				break;
 			case '4':
-				 timer_initTPM1AsPWM(75);
+				timer_changeCoolerPwm(75);
 				 PUTCHAR('A');
 				 PUTCHAR('C');
 				 PUTCHAR('K');
@@ -126,7 +126,7 @@ void interpretCmd_interpretState(char cComando){
 				cEstado = 'I';
 				break;
 			case '5':
-				timer_initTPM1AsPWM(100);
+				timer_changeCoolerPwm(100);
 				PUTCHAR('A');
 				PUTCHAR('C');
 				PUTCHAR('K');

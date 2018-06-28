@@ -1,3 +1,6 @@
+#ifndef TIMER_
+#define TIMER_
+
 /* ************************************************** */
 /* Method name: 	   timer_initTPM1AsPWM        */
 /* Method description: configure Timer1 to act as PWM */
@@ -21,3 +24,7 @@ void timer_changeHeaterPwm(int iPwm);
 /* Output params:      n/a                          */
 /* ************************************************ */
 void timer_initHeater(void);
+
+
+#endif
+
